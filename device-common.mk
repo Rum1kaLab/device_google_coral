@@ -17,6 +17,9 @@ include hardware/google/pixel/mm/device_legacy.mk
 
 # ART
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+WITH_DEXPREOPT := true
+DEX_PREOPT_DEFAULT := generate-vdex-and-image
+WITH_DEXPREOPT_DEBUG_INFO := false
 
 # A/B support
 PRODUCT_PACKAGES += \
