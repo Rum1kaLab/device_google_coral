@@ -15,6 +15,9 @@ include hardware/google/pixel/common/pixel-common-device.mk
 # Inherit legacy Pixel configuration
 include hardware/google/pixel/mm/device_legacy.mk
 
+# ART
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
 # A/B support
 PRODUCT_PACKAGES += \
     checkpoint_gc \
