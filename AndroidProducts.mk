@@ -11,5 +11,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_coral.mk \
-    $(LOCAL_DIR)/lineage_flame.mk
+    $(LOCAL_DIR)/afterlife_coral.mk \
+    $(LOCAL_DIR)/afterlife_flame.mk

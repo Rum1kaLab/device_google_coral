@@ -3,8 +3,17 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AfterLife stuff.
+$(call inherit-product, vendor/afterlife/config/common_full_phone.mk)
+
+# AfterLife Configs
+AFTERLIFE_MAINTAINER := Rum1ka
+TARGET_ENABLE_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+SYSTEM_OPTIMIZE_JAVA := true
+TARGET_BOOT_ANIMATION_RES := 1080
+SYSTEMUI_OPTIMIZE_JAVA := true
+TARGET_SUPPORTS_QUICK_TAP := true
 
 #
 # All components inherited here go to system image
@@ -41,7 +50,7 @@ PRODUCT_BRAND := google
 PRODUCT_DEVICE := flame
 PRODUCT_MANUFACTURER := Google
 PRODUCT_MODEL := Pixel 4
-PRODUCT_NAME := lineage_flame
+PRODUCT_NAME := afterlife_flame
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="flame-user 13 TP1A.221005.002.B2 9382335 release-keys" \
