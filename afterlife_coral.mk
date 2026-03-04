@@ -9,11 +9,12 @@ $(call inherit-product, vendor/afterlife/config/common_full_phone.mk)
 # AfterLife Configs
 AFTERLIFE_MAINTAINER := Rum1ka
 TARGET_ENABLE_BLUR := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
 SYSTEM_OPTIMIZE_JAVA := true
+AFTERLIFE_GAPPS := basic
 TARGET_BOOT_ANIMATION_RES := 1080
 SYSTEMUI_OPTIMIZE_JAVA := true
 TARGET_SUPPORTS_QUICK_TAP := true
+
 #
 # All components inherited here go to system image
 #
