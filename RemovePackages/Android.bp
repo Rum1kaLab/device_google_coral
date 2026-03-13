@@ -49,5 +49,6 @@ prebuilt_etc {
 	"WallpaperEmojiPrebuilt-foldable-wallpaper",
 	"ModuleMetadata",
 	"DiagMon",
+	"WeatherPixelPrebuilt_10006113",
     ],
 }
