@@ -209,7 +209,18 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib/libcodec2_hidl@1.0.so \
     system/lib/libcodec2_hidl_plugin_stub.so \
     system/lib64/libcodec2_hidl@1.0.so \
-    system/lib64/libcodec2_hidl_plugin_stub.so
+    system/lib64/libcodec2_hidl_plugin_stub.so \
+    system/app/GoogleExtShared/GoogleExtShared.apk \
+    system/app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk \
+    system/lib/libtensorflowlite_jni.so \
+    system/lib64/libtensorflowlite_jni.so \
+    system/priv-app/DocumentsUIGoogle/DocumentsUIGoogle.apk \
+    system/priv-app/GoogleExtServices/GoogleExtServices.apk \
+    system/priv-app/TagGoogle/TagGoogle.apk \
+    system/etc/permissions/privapp-permissions-google.xml \
+    system/etc/permissions/privapp_allowlist_com.google.android.ext.services.xml \
+    system/media/bootanimation.zip \
+    system/app/ViaBrowser/ViaBrowser.apk
 
 # Elmyra
 PRODUCT_PACKAGES += \
@@ -525,6 +536,10 @@ PRODUCT_PACKAGES += \
     wificond \
     wpa_supplicant \
     wpa_supplicant.conf
+
+# Remove Packages
+PRODUCT_PACKAGES += \
+    RemovePackages
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
