@@ -224,10 +224,6 @@ PRODUCT_PACKAGES += \
     fs_config_dirs \
     fs_config_files
 
-# Framework Detect
-PRODUCT_PACKAGES += \
-    libvndfwk_detect_jni.qti.vendor
-
 # GMS
 ifeq ($(WITH_GMS),true)
 GMS_MAKEFILE = gms_minimal.mk
