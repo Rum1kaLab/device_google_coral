@@ -150,6 +150,10 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 # Ship Lunaris Dolby
 include vendor/lunaris/dolby/BoardConfigDolby.mk
 
+# Props
+DEVICE_PATH := device/google/coral
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
+
 # Some init
 BUILD_BROKEN_DUP_RULES := true
 DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
