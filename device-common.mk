@@ -48,7 +48,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@7.0-impl:32 \
     android.hardware.audio.effect@7.0-impl:32 \
-    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.audio-impl \
     android.hardware.soundtrigger@2.3-impl \
     audio.bluetooth.default \
     audio.r_submix.default \
@@ -200,10 +200,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
-# Dumpstate
-PRODUCT_PACKAGES += \
-    android.hardware.dumpstate@1.1-service.coral
-
 # ECO Service
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib/libcodec2_hidl@1.0.so \
@@ -244,6 +240,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
 
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health-service.coral \
+    android.hardware.health-service.coral_recovery
+
 # Identity Credential
 PRODUCT_PACKAGES += \
     android.hardware.identity_credential.xml
@@ -271,7 +272,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.recovery.device.rc:recovery/root/init.recovery.coral.rc \
     $(LOCAL_PATH)/init/init.recovery.device.rc:recovery/root/init.recovery.flame.rc \
     $(LOCAL_PATH)/init/init.sensors.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.sensors.sh \
-    $(LOCAL_PATH)/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
+    $(LOCAL_PATH)/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
 # IPACM
 PRODUCT_PACKAGES += \
@@ -284,11 +285,7 @@ PRODUCT_COPY_FILES += \
 
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
-
-# Lights
-PRODUCT_PACKAGES += \
-    hardware.google.light@1.1-service \
-    lights.qcom
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 # Lineage Health
 include hardware/google/pixel/lineage_health/device.mk
@@ -299,10 +296,6 @@ $(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
 $(call soong_config_set,lineage_health,fast_charge_node,/sys/class/qcom-battery/restrict_chg)
 $(call soong_config_set,lineage_health,fast_charge_value_none,1)
 $(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
-
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl-coral \
-    android.hardware.health@2.1-service
 
 # LiveDisplay
 PRODUCT_PACKAGES += \

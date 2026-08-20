@@ -3,9 +3,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# APK Verity
-ro.apk_verity.mode=2
-
 # Audio
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
@@ -95,6 +92,7 @@ ro.vendor.display.sensortype=2
 vendor.display.defer_fps_frame_count=2
 vendor.display.foss.config=1
 vendor.display.foss.config_path=/vendor/etc/FOSSConfig.xml
+vendor.display.lbe.supported=1
 vendor.display.primary_vsyncs_rate_change=2
 vendor.display.qdcm.mode_combine=1
 
@@ -184,9 +182,6 @@ ro.vendor.radio.log_loc="/data/vendor/modem_dump"
 ro.vendor.radio.log_prefix="modem_log_"
 telephony.active_modems.max_count=2
 vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
-
-# UI
-ro.support_one_handed_mode=true
 
 # VENC
 vendor.qc2.venc.avgqp.enable=1
