@@ -157,16 +157,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     chre_daemon_msm
 
+$(call soong_config_set_bool,chre,chre_daemon_load_into_sensorspd,true)
+
 # Citadel
 include hardware/google/pixel/citadel/citadel.mk
 
 # Component Overrides
 PRODUCT_COPY_FILES += \
     device/google/coral/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
-
-# Configstore
-PRODUCT_PACKAGES += \
-    disable_configstore
 
 # Context Hub
 PRODUCT_PACKAGES += \
@@ -273,6 +271,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.recovery.device.rc:recovery/root/init.recovery.flame.rc \
     $(LOCAL_PATH)/init/init.sensors.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.sensors.sh \
     $(LOCAL_PATH)/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
+
+# ION
+$(call soong_config_set_bool,libion,legacy_impl,true)
 
 # IPACM
 PRODUCT_PACKAGES += \
@@ -455,6 +456,11 @@ PRODUCT_SOONG_NAMESPACES += \
     device/google/coral \
     hardware/google/interfaces \
     hardware/google/pixel \
+    hardware/google/pixel/health \
+    hardware/google/pixel/pixelstats \
+    hardware/google/pixel/power-libperfmgr \
+    hardware/google/pixel/thermal \
+    hardware/google/pixel/usb \
     hardware/qcom/sm8150/display \
     hardware/qcom/sm8150/gps \
     hardware/qcom/wlan \
