@@ -14,7 +14,7 @@ add_hwservice(hal_rcsservice, hal_imscallinfo_hwservice)
 add_hwservice(hal_rcsservice, hal_imsfactory_hwservice)
 
 get_prop(hal_rcsservice, hwservicemanager_prop)
-get_prop(hal_rcsservice, qcom_ims_prop)
+set_prop(hal_rcsservice, qcom_ims_prop)
 
 allow hal_rcsservice sysfs_timestamp_switch:file r_file_perms;
 allow hal_rcsservice sysfs_data:file r_file_perms;
@@ -41,7 +41,7 @@ userdebug_or_eng(`
 ')
 
 set_prop(hal_rcsservice, ctl_vendor_imsrcsservice_prop)
-set_prop(hal_rcsservice, qcom_ims_prop)
+
 r_dir_file(hal_rcsservice, sysfs_soc)
 r_dir_file(hal_rcsservice, sysfs_esoc)
 r_dir_file(hal_rcsservice, sysfs_msm_subsys)
