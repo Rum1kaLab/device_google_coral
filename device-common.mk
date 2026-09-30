@@ -212,7 +212,8 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib/libcodec2_hidl@1.0.so \
     system/lib/libcodec2_hidl_plugin_stub.so \
     system/lib64/libcodec2_hidl@1.0.so \
-    system/lib64/libcodec2_hidl_plugin_stub.so
+    system/lib64/libcodec2_hidl_plugin_stub.so \
+    system/etc/permissions/privapp_allowlist_com.google.android.ext.services.xml
 
 # Elmyra
 PRODUCT_PACKAGES += \
