@@ -124,3 +124,6 @@ persist.timed.enable=true
 # Video
 vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.disable.pq=1
+
+# Motion Sense (Oslo): use the country override from the working Floral port.
+pixel.oslo.allowed_override=1

@@ -49,3 +49,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=coral
 
 $(call inherit-product, vendor/google/coral/coral-vendor.mk)
+
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += %
+include device/google/coral/boot_diagnostics/boot_capture.mk
+
+$(call inherit-product, vendor/hecker/floral/motionsense/motionsense.mk)
+$(call inherit-product, vendor/hecker/floral/faceid/faceid.mk)

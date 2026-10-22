@@ -9,11 +9,20 @@ LOCAL_PATH := device/google/coral
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+# Ship Lunaris Dolby
+$(call inherit-product, vendor/lunaris/dolby/dolby.mk)
+
 # Inherit common Pixel configuration
 include hardware/google/pixel/common/pixel-common-device.mk
 
 # Inherit legacy Pixel configuration
 include hardware/google/pixel/mm/device_legacy.mk
+
+# ART
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+WITH_DEXPREOPT := true
+DEX_PREOPT_DEFAULT := generate-vdex-and-image
+WITH_DEXPREOPT_DEBUG_INFO := false
 
 # A/B support
 PRODUCT_PACKAGES += \

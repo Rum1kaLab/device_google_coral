@@ -3,6 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+TARGET_FACE_UNLOCK_SUPPORTED := false
+PRODUCT_NO_CAMERA := true
+
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
@@ -49,3 +52,13 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=flame
 
 $(call inherit-product, vendor/google/flame/flame-vendor.mk)
+
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += %
+include device/google/coral/boot_diagnostics/boot_capture.mk
+
+$(call inherit-product, vendor/hecker/floral/motionsense/motionsense.mk)
+$(call inherit-product, vendor/hecker/floral/faceid/faceid.mk)
+
+# Use the original signed Camera package tested on Infinity-X Coral.
+$(call inherit-product, device/google/coral/camera/camera.mk)
+PRODUCT_PACKAGES := $(filter-out Aperture Camera2,$(PRODUCT_PACKAGES))

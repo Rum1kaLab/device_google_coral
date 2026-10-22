@@ -20,6 +20,9 @@ set_prop(vendor_init, camera_prop)
 set_prop(vendor_init, vendor_build_type_prop)
 set_prop(vendor_init, vendor_disable_spu_prop)
 
+# Publish the board's Soli capability before Oslo evaluates availability.
+set_prop(vendor_init, vendor_aware_available_prop)
+
 #IMS related
 set_prop(vendor_init, qcom_ims_prop)
 
