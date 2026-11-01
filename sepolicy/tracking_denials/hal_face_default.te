@@ -1,3 +1,4 @@
 # b/149542424
+dontaudit hal_face_default default_prop:file read;
 dontaudit hal_face_default exported_camera_prop:file read;
 dontaudit hal_face_default vendor_display_prop:file read;
